@@ -148,6 +148,7 @@ This document describes the steps used to create a LAMP (Linux, Apache, MySQL an
 
    ```sudo apache2ctl configtest```
 if you see "syntax OK" then you good to go
+
 ![alt text](<Images/Screenshot 2026-01-03 121643.png>)
 
 - Finally, reload Apache so these changes take effect by running the command below:
