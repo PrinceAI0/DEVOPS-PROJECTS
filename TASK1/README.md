@@ -9,17 +9,17 @@ This document describes the steps used to create a LAMP (Linux, Apache, MySQL an
 
 - Create an EC2 instance in AWS with Ubuntu Server
 
-![alt text](<Images/EC2 created on AWS.png>)
+   ![alt text](<Images/EC2 created on AWS.png>)
 
 - Connect your EC2 
 
-![alt text](Images/coonect.png)
+   ![alt text](Images/coonect.png)
 
-![alt text](<Images/connect 1.png>)
+   ![alt text](<Images/connect 1.png>)
 
 - After a successful connection this will be your result as seen in the image below
 
-![alt text](<Images/coonect 2.png>)
+   ![alt text](<Images/coonect 2.png>)
 
 ## STEP 1 — INSTALLING APACHE
 
@@ -27,32 +27,32 @@ This document describes the steps used to create a LAMP (Linux, Apache, MySQL an
 
   ```sudo apt update```
 
-![alt text](<Images/step 1 image 1.png>)
+   ![alt text](<Images/step 1 image 1.png>)
 
 - Run apache2 package installation
 
   ```sudo apt install apache2``` 
 
-![alt text](<Images/step 1 image 2.png>)
+   ![alt text](<Images/step 1 image 2.png>)
 
 - To verify that apache2 is running as a Service in our OS, use following command below, If it is green and running, then you did everything correctly
 
     ```sudo systemctl status apache2```
 
-![alt text](<Images/step 1 image 3.png>)
+   ![alt text](<Images/step 1 image 3.png>)
 
 - Before we can receive any traffic by our Web Server, we need to open TCP port 80 which is the default port that web browsers use to access web pages on the Internet.... Follow the image below to open TCP port 80 in your EC2
 
-![alt text](<Images/TCP 80 1.png>)
+   ![alt text](<Images/TCP 80 1.png>)
 
-![alt text](<Images/TCP 80 2.png>)
+   ![alt text](<Images/TCP 80 2.png>)
 
-![alt text](<Images/TCP 80 3.png>)
+   ![alt text](<Images/TCP 80 3.png>)
 - As seen in the image above, the first step to take is add rule which i numbered as 1, so follow the numbers accordingly and get it done.
 
 - To view the Apache default page, Go to http://Public-IP-Address:80   in your browser, you will see something like the image below
 
-![alt text](<Images/Screenshot 2026-01-04 011635.png>)
+  ![alt text](<Images/Screenshot 2026-01-04 011635.png>)
 
 
 ## STEP 2 — INSTALLING MYSQL
@@ -61,13 +61,13 @@ This document describes the steps used to create a LAMP (Linux, Apache, MySQL an
 
     ```sudo apt install mysql-server```
 
-![alt text](<Images/Step 2 image 1.png>)
+   ![alt text](<Images/Step 2 image 1.png>)
 
 - When the installation is finished, log in to the MySQL console by typing the command below:
 
     ```sudo mysql```
 
-![alt text](<Images/Step 2 image 2.png>)
+  ![alt text](<Images/Step 2 image 2.png>)
 
 - Define the users password using this command:
 
@@ -81,13 +81,13 @@ This document describes the steps used to create a LAMP (Linux, Apache, MySQL an
 
     ```sudo mysql_secure_installation```
 
-![alt text](<Images/step 2 image 3.png>)
+  ![alt text](<Images/step 2 image 3.png>)
 
 - When you’re finished, test if you’re able to log in to the MySQL console by typing the command below and enter your password to gain access.
 
    ```sudo mysql -p```
 
-![alt text](<Images/Step 2 image 4.png>)
+  ![alt text](<Images/Step 2 image 4.png>)
 
 - To exit the MySQL console, type the command below:
 
@@ -102,7 +102,7 @@ This document describes the steps used to create a LAMP (Linux, Apache, MySQL an
 
    ```sudo apt install php libapache2-mod-php php-mysql```
 
-![alt text](<Images/Step 3 image 1.png>)   
+  ![alt text](<Images/Step 3 image 1.png>)   
 
 
 ## STEP 4 — CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE
@@ -135,7 +135,7 @@ This document describes the steps used to create a LAMP (Linux, Apache, MySQL an
 ```
 - After pasting the text above it will be come out looking like the image below
 
-![alt text](<Images/Step 4 image 1.png>)
+  ![alt text](<Images/Step 4 image 1.png>)
 
 - You can now use a2ensite command to enable the new virtual host:
 
@@ -149,7 +149,7 @@ This document describes the steps used to create a LAMP (Linux, Apache, MySQL an
    ```sudo apache2ctl configtest```
 if you see "syntax OK" then you good to go
 
-  ![alt text](<Images/Screenshot 2026-01-03 121643.png>)
+  ![alt text](<Images/Syntax ok.png>)
 
 - Finally, reload Apache so these changes take effect by running the command below:
 
@@ -173,7 +173,7 @@ if you see "syntax OK" then you good to go
 ```
 - after pasting the text above you will save something like the image below make sure you save and exit.
 
-![alt text](<Images/Step 5 image 1.png>)
+   ![alt text](<Images/Step 5 image 1.png>)
 
 - After saving and closing the file, you will need to reload Apache so the changes take effect by running this command below:
 
@@ -191,7 +191,7 @@ phpinfo();
 - When you are finished, save and close the file
 - Copy your public ip address and paste it in any of your browser then you will see your PHP just as seen in the image below
 
-![alt text](<Images/PHP pic.png>)
+   ![alt text](<Images/PHP pic.png>)
 
 
 
