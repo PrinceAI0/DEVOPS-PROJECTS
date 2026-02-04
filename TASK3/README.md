@@ -300,11 +300,11 @@ DB = 'mongodb+srv://<username>:<password>@<network-address>/<dbname>?retryWrites
 
 - Here is how to get your connection string:
 
-  ![alt text](<cluster 8.png>)
+  ![alt text](<Images/cluster 8.png>)
 
-  ![alt text](<cluster 9.png>)
+  ![alt text](<Images/cluster 9.png>)
 
-  ![alt text](<cluster 10.png>)
+  ![alt text](<Images/cluster 10.png>)
 
 - Now we need to update the ```index.js``` to reflect the use of ```.env``` so that ```Node.js``` can connect to the database.
 - Simply delete existing content in the file, and update it with the entire code below by using vim or nano
@@ -347,7 +347,7 @@ app.listen(port, () => {
 console.log(`Server running on port ${port}`)
 });
 ```
-   ![alt text](step1.13.png)
+   ![alt text](Images/step1.13.png)
 
 - **NOTE**: Using environment variables to store information is considered more secure and best practice to separate configuration and secret data from the application, instead of writing connection strings directly inside the ```index.js``` application file.
 - Start your server using the command:
@@ -355,7 +355,7 @@ console.log(`Server running on port ${port}`)
     ```node index.js```
 You shall see a message **‘Database connected successfully'**
 
-  ![alt text](step1.14.png)
+  ![alt text](Images/step1.14.png)
 
 - **TESTING OUR BACKEND CODE**
 - So far, we have built the backend of our **To-Do application.** This backend handles things like saving tasks, reading tasks, updating them, and deleting them from the database. We have also successfully connected our app to a database.
@@ -375,15 +375,15 @@ This type of tool allows us to send requests (like GET, POST, PUT, DELETE) direc
 - Click [HERE](https://www.youtube.com/watch?v=FjgYtQK_zLE) to learn how perform [CRUD operartions](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) on Postman.
 - **Note:** Make sure your set header key ```Content-Type``` as ```application/json```
 
-  ![alt text](step1.15.png)
+  ![alt text](Images/step1.15.png)
 
 -  create a **POST** request to the API http://PublicIP-or-PublicDNS:5000/api/todos. This request sends a new task to our To-Do list so the application could store it in the database.
 
-   ![alt text](step1.16.png)
+   ![alt text](Images/step1.16.png)
 
 - Create a **GET** request to your API on http://PublicIP-or-PublicDNS:5000/api/todos. This request retrieves all existing records from out To-do application (backend requests these records from the database and sends it us back as a response to GET request).
 
-  ![alt text](step1.17.png)
+  ![alt text](Images/step1.17.png)
 
 
 **STEP 2 – FRONTEND CREATION**
@@ -393,7 +393,7 @@ This type of tool allows us to send requests (like GET, POST, PUT, DELETE) direc
 
     ```npx create-react-app client```
 
-  ![alt text](step2.1.png)
+  ![alt text](Images/step2.1.png)
 
 - Install **Concurrently**. It is used to run more than one command simultaneously from the same terminal window.
 
@@ -403,7 +403,7 @@ This type of tool allows us to send requests (like GET, POST, PUT, DELETE) direc
 
    ```npm install nodemon --save-dev```
 
-  ![alt text](step2.2.png)
+  ![alt text](Images/step2.2.png)
 
 - In ```Todo``` folder open the ```package.json file```. Change the highlighted part of the below screenshot and replace with the code below.
 ```
@@ -412,7 +412,7 @@ This type of tool allows us to send requests (like GET, POST, PUT, DELETE) direc
 "start-watch": "nodemon index.js",
 "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
 ```
-![alt text](step2.3-1.png)
+![alt text](Images/step2.3-1.png)
 
 - Change directory to ‘client’
 
@@ -421,10 +421,10 @@ This type of tool allows us to send requests (like GET, POST, PUT, DELETE) direc
 
     ```vi package.json```
 
-    ![alt text](step2.5.png)
+    ![alt text](Images/step2.5.png)
 - Add the key value pair in the ```package.json``` file "proxy": "http://localhost:5000".
 
-  ![alt text](step2.4.png)
+   ![alt text](Images/step2.4.png)
 
 - **The whole purpose of adding the proxy configuration in number 3 above is to make it possible to access the application directly from the browser by simply calling the server url like http://localhost:5000 rather than always including the entire path like http://localhost:5000/api/todos**
 
@@ -432,11 +432,11 @@ This type of tool allows us to send requests (like GET, POST, PUT, DELETE) direc
 
    ```npm run dev```
 
-  ![alt text](step2.7.png)
+  ![alt text](Images/step2.7.png)
 
 - Your app should open and start running on ```localhost:3000```
 
-   ![alt text](step2.6.png)
+   ![alt text](Images/step2.6.png)
 
 - **Important note: In order to be able to access the application from the Internet you have to open TCP port 3000 on EC2 by adding a new Security Group rule. You already know how to do it.**
 
@@ -456,7 +456,7 @@ This type of tool allows us to send requests (like GET, POST, PUT, DELETE) direc
 
   ```touch Input.js ListTodo.js Todo.js```
 
-  ![alt text](step2.8.png)
+  ![alt text](Images/step2.8.png)
 
 - Open Input.js file
 
@@ -516,7 +516,7 @@ export default Input
 
     ```npm install axios```
 
-  ![alt text](step2.9.png)
+  ![alt text](Images/step2.9.png)
 - Go to **‘components’** directory
 
    ```cd src/components```
@@ -553,7 +553,7 @@ return (
  
 export default ListTodo
 ```
-![alt text](step2.10.png)
+![alt text](Images/step2.10.png)
 
 - Then in your **Todo.js** file,  write the following code
 ```
@@ -613,7 +613,7 @@ let { todos } = this.state;
  
 export default Todo;
 ```
-![alt text](step2.11.png)
+![alt text](Images/step2.11.png)
 
 - We need to make little adjustment to our react code. Delete the logo and adjust our **App.js** to look like this.
 Move to the **src** folder
@@ -638,7 +638,7 @@ return (
  
 export default App;
 ```
-![alt text](step2.12.png)
+![alt text](Images/step2.12.png)
 
 - In the **src** directory open the **App.css**
 
@@ -734,7 +734,7 @@ margin-top: 0;
 }
 }
 ```
-![alt text](step2.13-1.png)
+![alt text](Images/step2.13.png)
 
 - In the **src** directory open the **index.css**
 
@@ -759,7 +759,7 @@ font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 monospace;
 }
 ```
-![alt text](step2.14.png)
+![alt text](Images/step2.14.png)
 
 - Go to the **Todo** directory
 
@@ -768,11 +768,11 @@ monospace;
 
     ```npm run dev```
 
-![alt text](step2.15.png)
+![alt text](Images/step2.15.png)
 
 - **Assuming no errors when saving all these files, our To-Do app should be ready and fully functional with the functionality discussed earlier: creating a task, deleting a task and viewing all your tasks.**
 
-![alt text](step2.16.png)
+![alt text](Images/step2.16.png)
 
 
 
