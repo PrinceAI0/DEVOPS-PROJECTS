@@ -265,7 +265,7 @@ module.exports = router;
 
 
 - Create a cluster ( build a cluster ) and follow the steps in the images below
-   ![alt text](<cluster 1.png>)
+   ![alt text](<Images/cluster 1.png>)
 
    ![alt text](<cluster 2.png>)
 
