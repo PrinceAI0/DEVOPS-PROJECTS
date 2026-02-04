@@ -267,23 +267,23 @@ module.exports = router;
 - Create a cluster ( build a cluster ) and follow the steps in the images below
    ![alt text](<Images/cluster 1.png>)
 
-   ![alt text](<cluster 2.png>)
+   ![alt text](<Images/cluster 2.png>)
 
 - First of all delete the IP address you will see because is Private IP and we want the IP to be public and the "Add IP Address"
 
-   ![alt text](<cluster 3.png>)
+   ![alt text](<Images/cluster 3.png>)
 
 - incase you didn't see the "Allow Access From Anywhere" option, add is manually by yourself just as highlighted in the image below.
 
-   ![alt text](<cluster 4.png>)
+   ![alt text](<Images/cluster 4.png>)
 
 - Create a MongoDB database and collection
 
-   ![alt text](<cluster 5.png>)
+   ![alt text](<Images/cluster 5.png>)
 
-   ![alt text](<cluster 6.png>)
+   ![alt text](<Images/cluster 6.png>)
 
-   ![alt text](<cluster 7.png>)
+   ![alt text](<Images/cluster 7.png>)
 
 - In the ```index.js``` file, we specified ```process.env``` to access environment variables, but we have not yet created this file. So we need to do that now.
 - Create a file in your ```Todo``` directory and name it ```.env.``` by running the command below:
