@@ -21,7 +21,8 @@
 
   **Three-tier Architecture is a client-server software architecture pattern that comprise of 3 separate layers**.
 
-  ![alt text](3-thier.png)
+  ![alt text](Images/3-thier.png)
+
 1. **Presentation Layer (PL)**: This is the user interface such as the client server or browser on your laptop.
 
 2. **Business Layer (BL)**: This is the backend program that implements business logic. Application or Webserver
